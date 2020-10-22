@@ -1,0 +1,92 @@
+<%= form_with(model: program, local: true, :html => {multipart: true}) do |form| %>
+  <% if program.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(program.errors.count, "error") %> prohibited this program from being saved:</h2>
+
+      <ul>
+        <% program.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :name %>
+    <%= form.text_field :name, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :image %>
+    <%= form.file_field :image , class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :lecturers %>
+    <%= form.text_field :lecturers , class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :description %>
+    <%= form.text_area :description , class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :level %>
+    <%= form.text_field :level , class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :prerequisite %>
+    <%= form.text_area :prerequisite , class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :literature %>
+    <%= form.text_area :literature , class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :syllabus %>
+    <%= form.text_area :syllabus , class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :hours %>
+    <%= form.text_field :hours , class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :skills %>
+    <%= form.text_field :skills , class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :workload %>
+    <%= form.text_area :workload , class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :faq %>
+    <%= form.text_area :faq , class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :capacity %>
+    <%= form.text_field :capacity , class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :study_board %>
+    <%= form.text_field :study_board , class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :faculty %>
+    <%= form.text_field :faculty , class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.submit class: "btn btn-primary" %>
+  </div>
+<% end %>

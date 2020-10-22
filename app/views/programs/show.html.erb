@@ -1,0 +1,138 @@
+<p id="notice"><%= notice %></p>
+
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-3">
+       
+        <div class="panel panel-default">
+          <div class="panel-heading text-center">
+              
+              <div class="thumbnail">
+                  <p>
+                    <%= image_tag @program.image_url %>
+                  </p>
+              </div>
+             <p>
+                <h5><strong><%= @program.name %></strong></h5>
+              </p>
+          </div>
+           
+          <div class="panel-body">
+              
+              <p>
+                <strong>Level:</strong>
+                <%= @program.level %>
+              </p>
+
+              <p>
+                <strong>Lecturers:</strong>
+                <%= @program.lecturers %>
+              </p>
+          </div>
+        </div>
+
+
+
+    </div>
+
+  <div class="col-md-9">
+             <div class="panel panel-default">
+              <nav>
+                  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Description</a>
+                    <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Pre-requisite</a>
+                    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Syllabus</a>
+                  </div>
+                </nav>
+                <div class="container-fluid">
+                <div class="tab-content" id="nav-tabContent">
+                  <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"> <div>
+                        <p>                        
+                          <h5><strong>Description:</strong></h5><br>
+                            <%= @program.description %>
+                          </p>
+                          <br>
+
+
+                          <p>
+                            <strong>Capacity:</strong>
+                            <%= @program.capacity %>
+                          </p>
+
+                          <p>
+                            <strong>Study Board:</strong>
+                            <%= @program.study_board %>
+                          </p>
+
+                          <p>
+                            <strong>Faculty:</strong>
+                            <%= @program.faculty %>
+                          </p>
+                    </div>
+
+                  </div>
+                  <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                    <div>
+                      <p>
+                        <h5><strong>Pre-requisite:</strong></h5><br>
+                        <%= @program.prerequisite %>
+                      </p>
+                      <br>
+                      <p>
+                        <strong>Literature:</strong>
+                        <%= @program.literature %>
+                      </p>
+                      <p>
+                        <strong>Faq:</strong>
+                        <%= @program.faq %>
+                      </p>
+
+                    </div>
+
+
+                  </div>
+
+                  <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                     <p class="text-lg">
+                        <h5><strong>The list of the course schedule is below:</strong></h5><br>
+                    </p>
+                    
+
+                    <p>
+                      <strong>Syllabus:</strong>
+                      <%= @program.syllabus %>
+                    </p>
+                    <br>
+                    <p>
+                      <strong>Hours:</strong>
+                      <%= @program.hours %>
+                    </p>
+
+                    <p>
+                      <strong>Skills:</strong>
+                      <%= @program.skills %>
+                    </p>
+
+                    <p>
+                      <strong>Workload:</strong>
+                      <%= @program.workload %>
+                    </p>
+
+                </div>
+             </div>
+              </div>
+            </div>
+          </div>
+
+
+  </div>
+</div>
+
+<% if user_signed_in? %>
+<%= link_to 'Edit', edit_program_path(@program) , class: "btn btn-link" %> |
+<% end %>
+<%= link_to 'Back', programs_path , class: "btn btn-link" %>
+
+</div>
+</div>

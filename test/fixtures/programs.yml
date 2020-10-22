@@ -1,0 +1,35 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  image: MyString
+  lecturers: MyString
+  description: MyText
+  level: MyString
+  prerequisite: MyText
+  literature: MyText
+  syllabus: MyText
+  hours: MyString
+  skills: MyString
+  workload: MyText
+  faq: MyText
+  capacity: MyString
+  study_board: MyString
+  faculty: MyString
+
+two:
+  name: MyString
+  image: MyString
+  lecturers: MyString
+  description: MyText
+  level: MyString
+  prerequisite: MyText
+  literature: MyText
+  syllabus: MyText
+  hours: MyString
+  skills: MyString
+  workload: MyText
+  faq: MyText
+  capacity: MyString
+  study_board: MyString
+  faculty: MyString

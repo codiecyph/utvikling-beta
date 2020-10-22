@@ -1,0 +1,54 @@
+<h2>Search:\></h2>
+
+<table class="table table-borderless table-striped table-hover table-condensed">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Image</th>
+      <th>Lecturers</th>
+      <th>Description</th>
+      <th>Level</th>
+      <th>Prerequisite</th>
+      <th>Literature</th>
+      <th>Syllabus</th>
+      <th>Hours</th>
+      <th>Skills</th>
+      <th>Workload</th>
+      <th>Faq</th>
+      <th>Capacity</th>
+      <th>Study board</th>
+      <th>Faculty</th>
+      <% if user_signed_in? %>
+      <th colspan="3"></th>
+      <% end %>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @programs.each do |program| %>
+      <tr>
+        <td><%= link_to program.name, program %></td>
+        <td><%= link_to image_tag(program.image.url), program %></td>
+        <td><%= program.lecturers %></td>
+        <td><%= program.description %></td>
+        <td><%= program.level %></td>
+        <td><%= program.prerequisite %></td>
+        <td><%= program.literature %></td>
+        <td><%= program.syllabus %></td>
+        <td><%= program.hours %></td>
+        <td><%= program.skills %></td>
+        <td><%= program.workload %></td>
+        <td><%= program.faq %></td>
+        <td><%= program.capacity %></td>
+        <td><%= program.study_board %></td>
+        <td><%= program.faculty %></td>
+        <td><%= link_to 'Show', program %></td>
+        <% if user_signed_in? %>
+        <td><%= link_to 'Edit', edit_program_path(program) %></td>
+        <td><%= link_to 'Destroy', program, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

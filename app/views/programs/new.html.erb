@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col-md-3">
+    <ul class="sidebar-list">
+     <li class="sidebar-item"><h2>Add course</h2></li>
+    </ul>
+   
+  </div>
+
+  <div class="col-md-9">
+    <div class="panel panel-default">
+  			<div class="panel-heading text-center">Add new course to library</div>
+    <div class="panel-body">
+      
+
+
+		<%= render 'form', program: @program %>
+
+		<%= link_to 'Back', programs_path, class: "btn btn-link" %>
+
+  	 
+	</div>
+    </div>
+   </div>
+</div>

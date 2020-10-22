@@ -1,0 +1,72 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light text-primary">
+<a href="/"><img src="/img/logo4.png" alt="Course"></a>
+          
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              
+              <li class="nav-item"><%= link_to "About", pages_about_path, class: "nav-link" %></li>
+
+              <li class="nav-item"><%= link_to "Programs", pages_programs_path, class: "nav-link"%></li>
+              <li class="nav-item"><%= link_to "Research", pages_research_path, class: "nav-link"%></li>
+              <li class="nav-item"><%= link_to "News", pages_news_path, class: "nav-link"%></li>
+
+              <li class="nav-item"><%= link_to "Partnership", pages_partnership_path, class: "nav-link" %></li>
+
+              <li class="nav-item"><%= link_to "FAQ", pages_faq_path, class: "nav-link"%></li>
+
+               <li class="nav-item"><%= link_to "Contact", pages_contact_path, class: "nav-link"%></li>
+              
+               <%= form_tag search_programs_path, method: :get, class: "form-inline my-2 my-lg-0" do%>
+          <p>
+            <%= text_field_tag :search, params[:search], class: "form-control mr-sm-2" %>
+            <%= submit_tag "Search", name:nil, class: "btn btn-outline-secondary my-2 my-sm-0"%>
+          </p>
+          <% end %>            
+              
+
+            </ul>
+              
+        
+          <ul class="navbar-nav navbar-right">
+
+              <% if (!user_signed_in?) %>
+                   <li class="nav-item"><%= link_to "Sign up", new_user_registration_path, class: "nav-link" %></li>
+               
+                   <li class="nav-item"><%= link_to "Sign in", new_user_session_path, class: "btn btn-primary"%></li>
+
+
+              <% else %>
+              
+
+
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="fas fa fa-user"></i>
+                  <%= current_user.email %><span class="caret"></span>
+                </a>
+
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">My Courses</a>
+                  
+                  <%= link_to "Edit Profile", edit_user_registration_path, class: "dropdown-item"%> 
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Account Settings</a>
+                </div>
+              </li>
+              
+              <li class="nav-item"><%= link_to "Sign out", destroy_user_session_path, class: "nav-link", method: :delete %></li>
+
+             <% end %>
+
+
+          
+          </ul>
+
+          </div>
+
+</nav>
